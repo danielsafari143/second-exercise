@@ -1,5 +1,5 @@
 using BlazingPizza.Data;
-namespace BlazingPiza.data;
+namespace BlazingPizza.Data;
 
 public class PizzaService
 {
