@@ -4,17 +4,39 @@
 
 <h1>Blazzing Pizza</h1>
 
-@if(todayPizzas == null){
+@if(todaysPizzas == null){
   <p>No pizza for now please refresh the page or revise the page after a while</p>
 }else{
-  <p>Pizza List</p>
+  <table>
+ <thead>
+  <tr>
+   <th>Pizza Name</th>
+   <th>Description</th>
+   <th>Vegetarian?</th>
+   <th>Vegan?</th>
+   <th>Price</th>
+  </tr>
+ </thead>
+ <tbody>
+  @foreach (var pizza in todaysPizzas)
+  {
+   <tr>
+    <td>@pizza.Name</td>
+    <td>@pizza.Description</td>
+    <td>@pizza.Vegetarian</td>
+    <td>@pizza.Vegan</td>
+    <td>@pizza.Price</td>
+   </tr>
+  }
+ </tbody>
+</table>
 }
 
 
 @code{
-  private Pizza [] todayPizzas;
+  private Pizza []? todaysPizzas;
   protected override async Task OnInitializedAsync(){
-    todayPizzas = PizzaSvc.getPizzaAsync();
+    todaysPizzas = await PizzaSvc.getPizzaAsync();
   }
 }
 
