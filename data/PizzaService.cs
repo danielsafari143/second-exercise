@@ -1,9 +1,9 @@
-using BlazingPizza.Data;
-namespace BlazingPizza.Data;
+// using BlazingPizza.Data;
+// namespace BlazingPizza.Data;
 
-public class PizzaService
-{
-    public Task<Pizza []> getPizzaAsync() {
-        //
-    }
-}
+// public class PizzaService
+// {
+//     public Task<Pizza []> getPizzaAsync() {
+      
+//     }
+// }
